@@ -9,24 +9,17 @@ headers = {
                   "Safari/537.36"}
 gm = GetMeets(token, headers)
 
-db_1 = {
-    'dbname': 'd6qfh4tmk9h4t2',
-    'user': 'xqhkevexwktfkk',
-    'password': 'cb8c1a6070ebed38248446e0960ffe7b3fd8ea4927c0aa3ef4d7e1b630588b3f',
-    'host': 'ec2-34-225-162-157.compute-1.amazonaws.com'
-}
 
-db_2 = {
-    'dbname': 'test',
-    'user': 'postgres',
-    'password': '123',
-    'host': 'localhost'
-}
+dbname = 'd6qfh4tmk9h4t2',
+user = 'xqhkevexwktfkk',
+password = 'cb8c1a6070ebed38248446e0960ffe7b3fd8ea4927c0aa3ef4d7e1b630588b3f',
+host = 'ec2-34-225-162-157.compute-1.amazonaws.com'
 
-with psycopg2.connect(dbname=db_2['dbname'],
-                      user=db_2['user'],
-                      password=db_2['password'],
-                      host=db_2['host']) as conn:
+
+with psycopg2.connect(dbname=dbname,
+                      user=user,
+                      password=password,
+                      host=host) as conn:
 
     with conn.cursor() as cursor:
         cursor.execute(
